@@ -8,9 +8,11 @@ namespace Planetas.ApplicationCore.Services
     public class HazardousAsteroidsService : IHazardousAsteroidsService
     {
         private readonly NasaApiOptions _nasaApiOptions;
-        public HazardousAsteroidsService(IOptions<NasaApiOptions> nasaApiOptions)
+        private readonly IHttpRequestService _httpRequestService;
+        public HazardousAsteroidsService(IOptions<NasaApiOptions> nasaApiOptions, IHttpRequestService httpRequestService)
         {
             _nasaApiOptions = nasaApiOptions?.Value ?? throw new ArgumentNullException(nameof(nasaApiOptions));
+            _httpRequestService = httpRequestService ?? throw new ArgumentNullException(nameof(httpRequestService));
         }
 
         public async Task<NasaApiResponseDto> GetHazardousAsteroids(DateTime? fromDate, DateTime? toDate)

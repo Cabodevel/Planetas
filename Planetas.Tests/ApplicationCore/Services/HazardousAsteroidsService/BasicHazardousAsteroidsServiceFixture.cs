@@ -15,7 +15,9 @@ namespace Planetas.Tests.ApplicationCore.Services.HazardousAsteroids
             var nasaOptions = new Mock<IOptions<NasaApiOptions>>();
             nasaOptions.SetupGet(opt => opt.Value).Returns(new NasaApiOptions());
 
-            Sut = new HazardousAsteroidsService(nasaOptions.Object);
+            var httpService = new Mock<IHttpRequestService>();
+
+            Sut = new HazardousAsteroidsService(nasaOptions.Object, httpService.Object);
         }
     }
 }
