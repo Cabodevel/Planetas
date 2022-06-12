@@ -1,6 +1,6 @@
-﻿using Planetas.ApplicationCore.Interfaces;
+﻿using Planetas.Infrastructure.Interfaces;
 
-namespace Planetas.ApplicationCore.Services
+namespace Planetas.Infrastructure.Services
 {
     public class HttpRequestService : IHttpRequestService
     {

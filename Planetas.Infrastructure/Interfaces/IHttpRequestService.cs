@@ -1,4 +1,4 @@
-﻿namespace Planetas.ApplicationCore.Interfaces
+﻿namespace Planetas.Infrastructure.Interfaces
 {
     public interface IHttpRequestService
     {

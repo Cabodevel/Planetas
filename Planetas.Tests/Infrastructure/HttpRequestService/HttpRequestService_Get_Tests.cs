@@ -1,5 +1,6 @@
-﻿using Planetas.ApplicationCore.Interfaces;
-using Planetas.ApplicationCore.Services;
+﻿
+using Planetas.Infrastructure.Interfaces;
+using Planetas.Infrastructure.Services;
 
 namespace Planetas.Tests.ApplicationCore.Services.HttpRequest
 {

@@ -1,7 +1,11 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using Planetas.API.Configuration.Options;
 using Planetas.ApplicationCore.Dtos;
+using Planetas.ApplicationCore.Helpers;
 using Planetas.ApplicationCore.Interfaces;
+using Planetas.Infrastructure.Interfaces;
 
 namespace Planetas.ApplicationCore.Services
 {
@@ -17,7 +21,43 @@ namespace Planetas.ApplicationCore.Services
 
         public async Task<NasaApiResponseDto> GetHazardousAsteroids(DateTime? fromDate, DateTime? toDate)
         {
-            return new NasaApiResponseDto(new Dictionary<string, IEnumerable<HazardousAsteroidDto>>());
+            var requestUrl = MapRequestUrl(fromDate, toDate);
+
+            var requestResponseMessage = await _httpRequestService.Get(requestUrl);
+
+            if (!requestResponseMessage.IsSuccessStatusCode)
+            {
+                return null;
+            }
+
+            var content = await requestResponseMessage.Content.ReadAsStringAsync();
+
+            var apiResponse = JsonConvert.DeserializeObject<NasaApiResponseDto>(content);
+
+
+            return apiResponse;
+        }
+
+        private string MapRequestUrl(DateTime? start, DateTime? end)
+        {
+            var queryParameters = new Dictionary<string, string>
+            {
+                {"api_key", _nasaApiOptions.ApiKey }
+            };
+
+            if (start.HasValue)
+            {
+                queryParameters.Add("start_date", start.Value.ParseToApiRequestDateTime());
+            }
+
+            if (end.HasValue)
+            {
+                queryParameters.Add("end_date", end.Value.ParseToApiRequestDateTime());
+            }
+
+            var queryUrl = new Uri(QueryHelpers.AddQueryString(_nasaApiOptions.Url, queryParameters));
+
+            return queryUrl.ToString();
         }
     }
 }
