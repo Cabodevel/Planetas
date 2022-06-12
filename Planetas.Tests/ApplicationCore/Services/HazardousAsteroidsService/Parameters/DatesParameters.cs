@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace Planetas.Tests.ApplicationCore.Services.HazardousAsteroids.Fixture
+namespace Planetas.Tests.ApplicationCore.Services.HazardousAsteroids.Parameters
 {
     public class DatesParameters : IEnumerable<object[]>
     {
@@ -12,6 +12,6 @@ namespace Planetas.Tests.ApplicationCore.Services.HazardousAsteroids.Fixture
             yield return new object[] { DateTime.Now, DateTime.Now };
         }
 
-       IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
+        IEnumerator IEnumerable.GetEnumerator() => GetEnumerator();
     }
 }

@@ -1,6 +1,7 @@
 ﻿using Planetas.ApplicationCore.Dtos;
 using Planetas.ApplicationCore.Interfaces;
 using Planetas.Tests.ApplicationCore.Services.HazardousAsteroids.Fixture;
+using Planetas.Tests.ApplicationCore.Services.HazardousAsteroids.Parameters;
 
 namespace Planetas.Tests.ApplicationCore.Services.HazardousAsteroids
 {

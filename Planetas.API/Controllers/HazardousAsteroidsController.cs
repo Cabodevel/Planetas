@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Planetas.API.Models;
+using Planetas.ApplicationCore.Dtos;
 using Planetas.ApplicationCore.Exceptions;
 using Planetas.ApplicationCore.Interfaces;
 

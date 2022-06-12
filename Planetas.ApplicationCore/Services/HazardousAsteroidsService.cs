@@ -41,6 +41,29 @@ namespace Planetas.ApplicationCore.Services
             return apiResponse;
         }
 
+        public HazardousAsteroidsFilteredDataDto FilterNearObjects(IEnumerable<HazardousAsteroidDto> nearObjects, HazardousAsteroidsRequestDto filters)
+        {
+            if(nearObjects is null)
+            {
+                throw new ArgumentNullException(nameof(nearObjects));
+            }
+
+            if (string.IsNullOrWhiteSpace(filters?.PlanetName))
+            {
+                throw new ArgumentNullException(nameof(filters));
+            }
+
+            var hazardousAsteroids = nearObjects
+                .GroupBy(no => no.CloseApproachData.Select(cad => cad.OrbitingBody.ToLowerInvariant()))
+                .Where(group => group.Key.ToList().Contains(filters.PlanetName.ToLowerInvariant()))
+                .SelectMany(groupResult => groupResult);
+           
+            var filteredCount = hazardousAsteroids.Count();
+            var pagedAsteroids = PagingHelper<HazardousAsteroidDto>.ApplyPaging(hazardousAsteroids, filters.PageNumber, filters.PageSize);
+           
+            return new HazardousAsteroidsFilteredDataDto(filteredCount, pagedAsteroids);
+        }
+
         private string MapRequestUrl(DateTime? start, DateTime? end)
         {
             var queryParameters = new Dictionary<string, string>
