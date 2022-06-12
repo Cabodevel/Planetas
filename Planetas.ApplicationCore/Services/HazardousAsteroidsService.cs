@@ -3,6 +3,7 @@ using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using Planetas.API.Configuration.Options;
 using Planetas.ApplicationCore.Dtos;
+using Planetas.ApplicationCore.Exceptions;
 using Planetas.ApplicationCore.Helpers;
 using Planetas.ApplicationCore.Interfaces;
 using Planetas.Infrastructure.Interfaces;
@@ -27,13 +28,15 @@ namespace Planetas.ApplicationCore.Services
 
             if (!requestResponseMessage.IsSuccessStatusCode)
             {
-                return null;
+                throw new UnexpectedResponseException(
+                    $"{nameof(HazardousAsteroidsService)}, {nameof(GetHazardousAsteroids)}" +
+                    $": unexpected response message, see inner exception for details"
+                    , new Exception(requestResponseMessage.ReasonPhrase));
             }
 
             var content = await requestResponseMessage.Content.ReadAsStringAsync();
 
             var apiResponse = JsonConvert.DeserializeObject<NasaApiResponseDto>(content);
-
 
             return apiResponse;
         }

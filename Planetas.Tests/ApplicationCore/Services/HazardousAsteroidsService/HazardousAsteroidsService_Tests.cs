@@ -1,4 +1,5 @@
 ﻿using Planetas.ApplicationCore.Interfaces;
+using Planetas.Tests.ApplicationCore.Services.HazardousAsteroids.Fixture;
 
 namespace Planetas.Tests.ApplicationCore.Services.HazardousAsteroids
 {
