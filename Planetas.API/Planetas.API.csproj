@@ -14,4 +14,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Planetas.ApplicationCore\Planetas.ApplicationCore.csproj" />
+  </ItemGroup>
+
 </Project>
