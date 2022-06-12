@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Planetas.API.Models;
+using Planetas.ApplicationCore.Exceptions;
 using Planetas.ApplicationCore.Interfaces;
 
 namespace Planetas.API.Controllers
 {
-    [ApiController]
     public class HazardousAsteroidsController : ControllerBase
     {
         private readonly IHazardousAsteroidsService _hazardousAsteroidsService;
@@ -23,10 +23,17 @@ namespace Planetas.API.Controllers
                 return new BadRequestObjectResult(new { ErrorMessage = "Planet name is required" });
             }
 
-            var apiResponse = await _hazardousAsteroidsService.GetHazardousAsteroids(hazardousAsteroidsFilter.FromDate, hazardousAsteroidsFilter.ToDate);
+            try
+            {
+                var apiResponse = await _hazardousAsteroidsService.GetHazardousAsteroids(hazardousAsteroidsFilter.FromDate, hazardousAsteroidsFilter.ToDate);
+                return new OkObjectResult(apiResponse);
+            }
+            catch (UnexpectedResponseException exception)
+            {
+                return StatusCode(500, exception.Message);
+            }
           
 
-            return new OkObjectResult(apiResponse);
         }
     }
 }

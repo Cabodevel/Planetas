@@ -1,13 +1,13 @@
-using Planetas.API.Configuration.Options;
+using Planetas.API.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 ConfigureOptions.Configure(builder.Services, builder.Configuration);
 ConfigureApplicationServices.Configure(builder.Services);
+ConfigureInfranstructureServices.Configure(builder.Services);
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

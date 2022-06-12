@@ -1,4 +1,6 @@
-﻿namespace Planetas.API.Configuration.Options
+﻿using Planetas.API.Configuration.Options;
+
+namespace Planetas.API.Configuration
 {
     internal static class ConfigureOptions
     {

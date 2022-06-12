@@ -1,7 +1,7 @@
 ﻿using Planetas.ApplicationCore.Interfaces;
 using Planetas.ApplicationCore.Services;
 
-namespace Planetas.API.Configuration.Options
+namespace Planetas.API.Configuration
 {
     internal static class ConfigureApplicationServices
     {
