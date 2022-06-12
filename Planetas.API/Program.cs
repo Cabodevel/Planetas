@@ -7,6 +7,7 @@ ConfigureOptions.Configure(builder.Services, builder.Configuration);
 ConfigureApplicationServices.Configure(builder.Services);
 ConfigureInfranstructureServices.Configure(builder.Services);
 
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
