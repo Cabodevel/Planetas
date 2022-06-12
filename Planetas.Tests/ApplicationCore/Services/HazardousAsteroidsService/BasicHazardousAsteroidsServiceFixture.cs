@@ -1,4 +1,7 @@
-﻿using Planetas.ApplicationCore.Interfaces;
+﻿using Microsoft.Extensions.Options;
+using Moq;
+using Planetas.API.Configuration.Options;
+using Planetas.ApplicationCore.Interfaces;
 using Planetas.ApplicationCore.Services;
 
 namespace Planetas.Tests.ApplicationCore.Services.HazardousAsteroids
@@ -9,8 +12,10 @@ namespace Planetas.Tests.ApplicationCore.Services.HazardousAsteroids
 
         public BasicHazardousAsteroidsServiceFixture()
         {
+            var nasaOptions = new Mock<IOptions<NasaApiOptions>>();
+            nasaOptions.SetupGet(opt => opt.Value).Returns(new NasaApiOptions());
 
-            Sut = new HazardousAsteroidsService();
+            Sut = new HazardousAsteroidsService(nasaOptions.Object);
         }
     }
 }
