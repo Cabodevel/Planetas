@@ -13,9 +13,9 @@ namespace Planetas.ApplicationCore.Services
             _nasaApiOptions = nasaApiOptions?.Value ?? throw new ArgumentNullException(nameof(nasaApiOptions));
         }
 
-        public Task<NasaApiResponseDto> GetHazardousAsteroids(DateTime? start, DateTime? end)
+        public async Task<NasaApiResponseDto> GetHazardousAsteroids(DateTime? fromDate, DateTime? toDate)
         {
-            throw new NotImplementedException();
+            return new NasaApiResponseDto(new Dictionary<string, IEnumerable<HazardousAsteroidDto>>());
         }
     }
 }
