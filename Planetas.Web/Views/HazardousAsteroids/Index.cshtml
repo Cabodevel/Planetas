@@ -8,8 +8,14 @@
 }
 
 <h1>Hazardous Asteroids</h1>
-<partial name="_HazardousAsteroidsFilters" for="Filters" />
- <partial name="_HazardousAsteroidsGrid" />
+<div class="mt-2">
+    <h3>Buscar por planeta y fecha</h3>
+    <partial name="_HazardousAsteroidsFilters" for="Filters" />
+</div>
+<div class="mt-5">
+    <partial name="_HazardousAsteroidsGrid" />
+</div>
+ 
 
  @section Scripts{
      <script src="~/lib/datatables.net/jquery.dataTables.min.js"></script>
