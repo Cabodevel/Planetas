@@ -1,1 +1,19 @@
 ﻿@model HazardousAsteroidsFilter
+
+<form class="row">
+    <div class="col-4">
+        <label asp-for="PlanetName"></label>
+        <input id="planet" class="form-control" asp-for="PlanetName" />
+    </div>
+     <div class="col-3">
+        <label asp-for="FromDate"></label>
+        <input id="from-date" class="form-control" type="date" asp-for="FromDate" />
+    </div>
+     <div class="col-3">
+        <label asp-for="ToDate"></label>
+        <input id="to-date" class="form-control" type="date" asp-for="ToDate" />
+    </div>
+    <div class="col-2 m-auto">
+        <input id="search-button" class="btn btn-outline-primary mt-4" type="button" value="Buscar"/> 
+    </div>
+</form>
