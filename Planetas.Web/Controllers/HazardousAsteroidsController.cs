@@ -8,7 +8,7 @@ namespace Planetas.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            return View(new HazardousAsteroidsViewModel());
+            return View();
         }
     }
 }
