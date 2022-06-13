@@ -1,13 +1,12 @@
 ﻿using Microsoft.Extensions.Options;
 using Moq;
-using Planetas.API.Configuration.Options;
-using Planetas.ApplicationCore.Interfaces;
-using Planetas.ApplicationCore.Services;
 using Planetas.Infrastructure.Interfaces;
+using Planetas.Infrastructure.Options;
+using Planetas.Infrastructure.Services;
 
-namespace Planetas.Tests.ApplicationCore.Services.HazardousAsteroids.Fixture
+namespace Planetas.Infrastructure.Tests.Services.HazardousAsteroids.Fixture
 {
-    public class HazardousAsteroidsServiceInvalidResponseFixture
+    internal class HazardousAsteroidsServiceInvalidResponseFixture
     {
         public IHazardousAsteroidsService Sut { get; }
 

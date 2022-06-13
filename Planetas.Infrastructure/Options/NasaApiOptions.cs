@@ -1,4 +1,4 @@
-﻿namespace Planetas.API.Configuration.Options
+﻿namespace Planetas.Infrastructure.Options
 {
     public class NasaApiOptions
     {

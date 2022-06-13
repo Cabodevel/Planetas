@@ -7,7 +7,7 @@ namespace Planetas.API.Configuration
     {
         internal static void Configure(IServiceCollection serviceCollection)
         {
-            serviceCollection.AddScoped<IHazardousAsteroidsService, HazardousAsteroidsService>();
+            serviceCollection.AddScoped<IHazardousAsteroidsApplicationService, HazardousAsteroidsApplicationService>();
         }
     }
 }

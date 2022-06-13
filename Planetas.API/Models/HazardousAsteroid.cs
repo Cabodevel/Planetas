@@ -1,6 +1,6 @@
 ﻿namespace Planetas.API.Models
 {
-    public class HazardousAsteroid
+    public class HazardousAsteroidVm
     {
         public string Name { get; set; }
         public decimal Diameter { get; set; }

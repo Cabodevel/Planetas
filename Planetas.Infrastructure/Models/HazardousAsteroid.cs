@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 
-namespace Planetas.ApplicationCore.Dtos
+namespace Planetas.Infrastructure.Models
 {
-    public class HazardousAsteroidDto
+    public class HazardousAsteroid
     {
         [JsonProperty("name")]
         public string Name { get; }
@@ -16,7 +16,7 @@ namespace Planetas.ApplicationCore.Dtos
         [JsonProperty("is_potentially_hazardous_asteroid")]
         public bool IsPotentiallyHazardous { get; }
 
-        public HazardousAsteroidDto(string name,
+        public HazardousAsteroid(string name,
             EstimatedDiameter estimatedDiameter,
             List<CloseApproachData> closeApproachData,
             bool isPotentiallyHazardous)

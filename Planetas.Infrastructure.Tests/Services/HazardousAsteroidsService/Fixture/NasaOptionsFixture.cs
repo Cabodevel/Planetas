@@ -1,8 +1,8 @@
 ﻿using Microsoft.Extensions.Options;
 using Moq;
-using Planetas.API.Configuration.Options;
+using Planetas.Infrastructure.Options;
 
-namespace Planetas.Tests.ApplicationCore.Services.HazardousAsteroids.Fixture
+namespace Planetas.Infrastructure.Tests.Services.HazardousAsteroids.Fixture
 {
     public class NasaOptionsFixture
     {

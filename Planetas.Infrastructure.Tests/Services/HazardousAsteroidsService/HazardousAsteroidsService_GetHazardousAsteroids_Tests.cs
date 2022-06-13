@@ -1,10 +1,10 @@
-﻿using Planetas.ApplicationCore.Dtos;
-using Planetas.ApplicationCore.Interfaces;
-using Planetas.Tests.ApplicationCore.Services.HazardousAsteroids.Fixture;
-using Planetas.Tests.ApplicationCore.Services.HazardousAsteroids.Parameters;
+﻿using Planetas.Infrastructure.Interfaces;
+using Planetas.Infrastructure.Models;
+using Planetas.Infrastructure.Tests.Services.HazardousAsteroids.Fixture;
+using Planetas.Infrastructure.Tests.Services.HazardousAsteroids.Parameters;
 
-namespace Planetas.Tests.ApplicationCore.Services.HazardousAsteroids
-{
+namespace Planetas.Infrastructure.Tests.Services.HazardousAsteroids
+{ 
     public class HazardousAsteroidsService_GetHazardousAsteroids_Tests
     {
         private readonly IHazardousAsteroidsService _sut;
@@ -28,7 +28,7 @@ namespace Planetas.Tests.ApplicationCore.Services.HazardousAsteroids
         {
             var response = await _sut.GetHazardousAsteroids(fromDate, toDate);
 
-            Assert.IsType<NasaApiResponseDto>(response);
+            Assert.IsType<NasaApiResponse>(response);
         }
     }
 }

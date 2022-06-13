@@ -7,15 +7,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{1A37
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{06583F6A-04ED-4322-BF8C-8127D3F1910B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planetas.API", "Planetas.API\Planetas.API.csproj", "{1A9272D6-FB6D-4313-B222-010D0A03C8BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planetas.API", "Planetas.API\Planetas.API.csproj", "{1A9272D6-FB6D-4313-B222-010D0A03C8BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planetas.ApplicationCore", "Planetas.ApplicationCore\Planetas.ApplicationCore.csproj", "{B72A6313-3A43-493F-909E-F50B7EE9A079}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planetas.ApplicationCore", "Planetas.ApplicationCore\Planetas.ApplicationCore.csproj", "{B72A6313-3A43-493F-909E-F50B7EE9A079}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planetas.Tests", "Planetas.Tests\Planetas.Tests.csproj", "{AF0E0879-406F-45E7-BF32-2B150EF635CF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planetas.ApplicationCore.Tests", "Planetas.Tests\Planetas.ApplicationCore.Tests.csproj", "{AF0E0879-406F-45E7-BF32-2B150EF635CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planetas.Web", "Planetas.Web\Planetas.Web.csproj", "{744A8A06-83E8-4561-A4C7-9EE2E9120ADE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planetas.Web", "Planetas.Web\Planetas.Web.csproj", "{744A8A06-83E8-4561-A4C7-9EE2E9120ADE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planetas.Infrastructure", "Planetas.Infrastructure\Planetas.Infrastructure.csproj", "{1776278D-F565-4E3A-9B7E-AFDE558AE04C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planetas.Infrastructure", "Planetas.Infrastructure\Planetas.Infrastructure.csproj", "{1776278D-F565-4E3A-9B7E-AFDE558AE04C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planetas.Infrastructure.Tests", "Planetas.Infrastructure.Tests\Planetas.Infrastructure.Tests.csproj", "{73AAF41E-5235-4595-BEC1-C5AB5A9E585C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +45,10 @@ Global
 		{1776278D-F565-4E3A-9B7E-AFDE558AE04C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1776278D-F565-4E3A-9B7E-AFDE558AE04C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1776278D-F565-4E3A-9B7E-AFDE558AE04C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73AAF41E-5235-4595-BEC1-C5AB5A9E585C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73AAF41E-5235-4595-BEC1-C5AB5A9E585C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73AAF41E-5235-4595-BEC1-C5AB5A9E585C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73AAF41E-5235-4595-BEC1-C5AB5A9E585C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{AF0E0879-406F-45E7-BF32-2B150EF635CF} = {1A37A80D-9F46-402E-9B69-667F4B90141B}
 		{744A8A06-83E8-4561-A4C7-9EE2E9120ADE} = {06583F6A-04ED-4322-BF8C-8127D3F1910B}
 		{1776278D-F565-4E3A-9B7E-AFDE558AE04C} = {1A37A80D-9F46-402E-9B69-667F4B90141B}
+		{73AAF41E-5235-4595-BEC1-C5AB5A9E585C} = {1A37A80D-9F46-402E-9B69-667F4B90141B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0AB9BD93-62F5-4048-BAC6-B29AD04678CC}

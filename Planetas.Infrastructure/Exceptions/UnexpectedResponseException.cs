@@ -1,4 +1,4 @@
-﻿namespace Planetas.ApplicationCore.Exceptions
+﻿namespace Planetas.Infrastructure.Exceptions
 {
     public class UnexpectedResponseException : Exception
     {

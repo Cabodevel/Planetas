@@ -1,12 +1,12 @@
-﻿using Planetas.ApplicationCore.Interfaces;
-using Planetas.Tests.ApplicationCore.Services.HazardousAsteroids.Fixture;
+﻿using Planetas.Infrastructure.Interfaces;
+using Planetas.Infrastructure.Tests.Services.HazardousAsteroids.Fixture;
 
-namespace Planetas.Tests.ApplicationCore.Services.HazardousAsteroids
+namespace Planetas.Infrastructure.Tests.Services.HazardousAsteroids
 {
     public class HazardousAsteroidsService_Tests
     {
         private readonly IHazardousAsteroidsService _sut;
-        
+
         public HazardousAsteroidsService_Tests()
         {
             _sut = new BasicHazardousAsteroidsServiceFixture().Sut;
@@ -23,7 +23,5 @@ namespace Planetas.Tests.ApplicationCore.Services.HazardousAsteroids
         {
             Assert.True(_sut is IHazardousAsteroidsService);
         }
-
-
     }
 }

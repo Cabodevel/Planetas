@@ -1,9 +1,9 @@
-﻿using Planetas.ApplicationCore.Exceptions;
-using Planetas.ApplicationCore.Interfaces;
-using Planetas.Tests.ApplicationCore.Services.HazardousAsteroids.Fixture;
-using Planetas.Tests.ApplicationCore.Services.HazardousAsteroids.Parameters;
+﻿using Planetas.Infrastructure.Exceptions;
+using Planetas.Infrastructure.Interfaces;
+using Planetas.Infrastructure.Tests.Services.HazardousAsteroids.Fixture;
+using Planetas.Infrastructure.Tests.Services.HazardousAsteroids.Parameters;
 
-namespace Planetas.Tests.ApplicationCore.Services.HazardousAsteroids
+namespace Planetas.Infrastructure.Tests.Services.HazardousAsteroids
 {
     public class HazardousAsteroidsService_GetHazardousAsteroids_InvalidResponse_Tests
     {

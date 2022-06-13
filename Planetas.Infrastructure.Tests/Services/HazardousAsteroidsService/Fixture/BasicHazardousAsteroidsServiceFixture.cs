@@ -1,13 +1,12 @@
 ﻿using Microsoft.Extensions.Options;
 using Moq;
 using Newtonsoft.Json;
-using Planetas.API.Configuration.Options;
-using Planetas.ApplicationCore.Dtos;
-using Planetas.ApplicationCore.Interfaces;
-using Planetas.ApplicationCore.Services;
 using Planetas.Infrastructure.Interfaces;
+using Planetas.Infrastructure.Models;
+using Planetas.Infrastructure.Options;
+using Planetas.Infrastructure.Services;
 
-namespace Planetas.Tests.ApplicationCore.Services.HazardousAsteroids.Fixture
+namespace Planetas.Infrastructure.Tests.Services.HazardousAsteroids.Fixture
 {
     public class BasicHazardousAsteroidsServiceFixture
     {
@@ -20,7 +19,7 @@ namespace Planetas.Tests.ApplicationCore.Services.HazardousAsteroids.Fixture
             nasaOptions.SetupGet(opt => opt.Value)
                 .Returns(new NasaApiOptions { ApiKey = "test", Url = "http://localhost" });
 
-            var apiDataMock = JsonConvert.SerializeObject(new NasaApiResponseDto(new Dictionary<string, IEnumerable<HazardousAsteroidDto>>()));
+            var apiDataMock = JsonConvert.SerializeObject(new NasaApiResponse(new Dictionary<string, IEnumerable<HazardousAsteroid>>()));
 
             var httpService = new Mock<IHttpRequestService>();
 

@@ -1,8 +1,7 @@
-﻿
-using Planetas.Infrastructure.Interfaces;
+﻿using Planetas.Infrastructure.Interfaces;
 using Planetas.Infrastructure.Services;
 
-namespace Planetas.Tests.ApplicationCore.Services.HttpRequest
+namespace Planetas.Infrastructure.Tests.Services.HttpRequest
 {
     public class HttpRequestService_Get_Tests
     {

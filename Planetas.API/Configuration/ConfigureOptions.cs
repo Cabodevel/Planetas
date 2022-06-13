@@ -1,4 +1,4 @@
-﻿using Planetas.API.Configuration.Options;
+﻿using Planetas.Infrastructure.Options;
 
 namespace Planetas.API.Configuration
 {
