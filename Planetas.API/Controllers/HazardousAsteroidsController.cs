@@ -7,6 +7,7 @@ using Planetas.Infrastructure.Exceptions;
 
 namespace Planetas.API.Controllers
 {
+    [Route("[controller]")]
     public class HazardousAsteroidsController : ControllerBase
     {
         private readonly IHazardousAsteroidsApplicationService _hazardousAsteroidsService;

@@ -1,10 +1,11 @@
 ﻿$(document).ready(function () {
-    $("#hazardous-asteroids-datatable").DataTable({
+    const dataTable = $("#hazardous-asteroids-datatable").DataTable({
         serverSide: true,
         paging: true,
         searching: false,
         ordering: false,
         processing: true,
+        deferLoading: 0,
         language: {
             lengthMenu: "Mostrar _MENU_ registros por página",
             zeroRecords: "No se encontraron registros",
@@ -56,5 +57,37 @@
                 targets: 3,
             }
         ]
+    });
+
+    $("#search-button").on("click", function () {
+        $("#planet-error-message").text("");
+        $("#days-error-message").text("");
+
+        if (!$("#planet").val()) {
+            $("#planet-error-message").text("Indica un planeta para realizar la búsqueda");
+            return;
+        }
+
+        let startDate = $("#from-date").val();
+        let endDate = $("#to-date").val();
+
+        if (startDate && endDate) {
+            let momentStartDate = moment(startDate);
+            let momentEndDate = moment(endDate);
+            let daysOfDifference = momentEndDate.diff(momentStartDate, 'days');
+
+            if (daysOfDifference > 7) {
+                $("#days-error-message").text("Elige menos de 7 días")
+                return;
+            }
+
+            if (daysOfDifference < 0) {
+                $("#days-error-message").text("La fecha de finalización no puede ser menor que la de inicio")
+                return;
+            }
+        }
+
+        dataTable.ajax.reload();
+        dataTable.draw();
     });
 });

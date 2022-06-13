@@ -1,6 +1,10 @@
+using Planetas.Web.Helpers;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<IHttpHandler, HttpHandler>();
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -10,6 +14,7 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
 }
+
 app.UseStaticFiles();
 
 app.UseRouting();
