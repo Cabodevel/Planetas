@@ -9,7 +9,7 @@
         language: {
             lengthMenu: "Mostrar _MENU_ registros por página",
             zeroRecords: "No se encontraron registros",
-            info: "Mostrando página _PAGE_ of _PAGES_",
+            info: "Mostrando página _PAGE_ de _PAGES_",
             infoEmpty: "No hay información",
             infoFiltered: "(filtrado de _MAX_ registros)",
             paginate: {
