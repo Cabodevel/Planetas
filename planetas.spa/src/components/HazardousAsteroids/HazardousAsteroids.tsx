@@ -2,6 +2,8 @@ import { FC, useEffect } from "react";
 import hazardousAsteroidsContext from "../../context/hazardousAsteroidsContext";
 import { HazardousContext } from "../../context/types";
 import { useContextOrError } from "../../hooks/useContextOrError";
+import HazardousAsteroidRowItem from "./HazardousAsteroidRowItem";
+import { Table } from "./HazardousAsteroids.css";
 
 const HazardousAsteroids: FC = () => {
   const asteroidsContext = useContextOrError<HazardousContext>(
@@ -23,11 +25,20 @@ const HazardousAsteroids: FC = () => {
 
   return (
     <>
-      <div>Test component</div>
-      {hazardousAsteroidsData.hazardousAsteroids &&
-        hazardousAsteroidsData.hazardousAsteroids.map((ha) => (
-          <div key={ha.name}>{ha.name}</div>
-        ))}
+      <Table className="flex justify-content-around">
+        <thead>
+          <th>Name</th>
+          <th>Diámetro</th>
+          <th>Velocidad</th>
+          <th>Fecha</th>
+        </thead>
+        <tbody>
+          {hazardousAsteroidsData.hazardousAsteroids &&
+            hazardousAsteroidsData.hazardousAsteroids.map((ha) => (
+              <HazardousAsteroidRowItem key={ha.name} hazardousAsteroid={ha} />
+            ))}
+        </tbody>
+      </Table>
     </>
   );
 };
