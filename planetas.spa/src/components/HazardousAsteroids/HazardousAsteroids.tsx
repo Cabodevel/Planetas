@@ -8,18 +8,26 @@ const HazardousAsteroids: FC = () => {
     hazardousAsteroidsContext
   );
 
-  const { hazardousAsteroids, getHazardousAsteroids } = asteroidsContext;
+  const { hazardousAsteroidsData, getHazardousAsteroids } = asteroidsContext;
 
   useEffect(() => {
-    getHazardousAsteroids();
-    console.log(hazardousAsteroids);
-  });
+    const callAsync = async () => {
+      await getHazardousAsteroids({
+        planetName: "Earth",
+      });
+    };
+
+    callAsync();
+    console.log(hazardousAsteroidsData);
+  }, []);
 
   return (
     <>
       <div>Test component</div>
-      {hazardousAsteroids &&
-        hazardousAsteroids.map((ha) => <div key={ha.name}>{ha.name}</div>)}
+      {hazardousAsteroidsData.hazardousAsteroids &&
+        hazardousAsteroidsData.hazardousAsteroids.map((ha) => (
+          <div key={ha.name}>{ha.name}</div>
+        ))}
     </>
   );
 };

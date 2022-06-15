@@ -1,9 +1,10 @@
 import { FC, ReactNode, useReducer } from "react";
-import hazardousAsteroidsClient from "../config/axios";
 import HazardousAsteroidsContext from "./hazardousAsteroidsContext";
 import hazardousAsteroidsReducer from "./hazardousAsteroidsReducer";
 import { HazardousAsteroidsActions } from "../types";
-import { IHazardousAsteroidsState } from "./interfaces";
+import { IHazardousAsteroidsState, IQueryParams } from "./interfaces";
+// import hazardousAsteroidsClient from "../config/axios";
+import { data } from "./hazardousDataMock";
 
 interface Props {
   children: ReactNode;
@@ -11,21 +12,27 @@ interface Props {
 
 const HazardousAsteroidsProvider: FC<Props> = ({ children }) => {
   const initialState: IHazardousAsteroidsState = {
-    hazardousAsteroids: [],
+    hazardousAsteroidsData: { totalItemsCount: 0, hazardousAsteroids: [] },
   };
 
   const [state, dispatch] = useReducer(hazardousAsteroidsReducer, initialState);
 
-  const getHazardousAsteroids = async () => {
+  const getHazardousAsteroids = async (params: IQueryParams) => {
     try {
-      debugger;
-      const result = await hazardousAsteroidsClient.get(
-        "/HazardousAsteroids/ByDate?planetName=Earth"
-      );
+      // const result = await hazardousAsteroidsClient.get(
+      //   "/HazardousAsteroids/ByDate",
+      //   {
+      //     headers: {
+      //       accept: "*/*",
+      //     },
+      //     params,
+      //   }
+      // );
 
       dispatch({
         type: HazardousAsteroidsActions.GET_HAZARDOUS_ASTEROIDS,
-        payload: result,
+        // payload: result.data,
+        payload: data,
       });
     } catch (error) {
       console.log(error);
@@ -35,7 +42,7 @@ const HazardousAsteroidsProvider: FC<Props> = ({ children }) => {
   return (
     <HazardousAsteroidsContext.Provider
       value={{
-        hazardousAsteroids: state.hazardousAsteroids,
+        hazardousAsteroidsData: state.hazardousAsteroidsData,
         getHazardousAsteroids,
       }}
     >

@@ -12,7 +12,7 @@ const reducer = (
     case HazardousAsteroidsActions.GET_HAZARDOUS_ASTEROIDS:
       return {
         ...state,
-        hazardousAsteroids: action.payload,
+        hazardousAsteroidsData: action.payload,
       };
     default:
       return state;

@@ -1,4 +1,5 @@
 import { HazardousAsteroidsActions } from "../types";
+import { HazardousAsteroidsResponse } from "./types";
 
 export interface IHazardousAsteroidsAction {
   type: HazardousAsteroidsActions;
@@ -6,7 +7,7 @@ export interface IHazardousAsteroidsAction {
 }
 
 export interface IHazardousAsteroidsState {
-  hazardousAsteroids: IHazardousAsteroid[];
+  hazardousAsteroidsData: HazardousAsteroidsResponse;
 }
 
 export interface IHazardousAsteroid {
@@ -14,4 +15,12 @@ export interface IHazardousAsteroid {
   diameter: number;
   speed: number;
   date: Date;
+}
+
+export interface IQueryParams {
+  planetName: string;
+  fromDate?: Date;
+  toDate?: Date;
+  pageNumber?: number;
+  pageSize?: number;
 }

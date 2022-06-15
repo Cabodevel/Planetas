@@ -1,6 +1,8 @@
+import { IQueryParams } from "./interfaces";
+
 export type HazardousContext = {
-  hazardousAsteroids: HazardousAsteroid[];
-  getHazardousAsteroids: () => void;
+  hazardousAsteroidsData: HazardousAsteroidsResponse;
+  getHazardousAsteroids: (params: IQueryParams) => void;
 };
 
 export type HazardousAsteroid = {
@@ -8,4 +10,9 @@ export type HazardousAsteroid = {
   diameter: number;
   speed: number;
   date: Date;
+};
+
+export type HazardousAsteroidsResponse = {
+  totalItemsCount: number;
+  hazardousAsteroids: HazardousAsteroid[];
 };
